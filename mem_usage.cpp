@@ -2,7 +2,8 @@
  * @file mem_usage.cpp
  * @author wangguibao(wang_guibao@163.com)
  * @date 2020/06/01 17:32:52
- * @brief 
+ * @brief Get process memory usage.
+ * @url https://stackoverflow.com/questions/669438/how-to-get-memory-usage-at-runtime-using-c/671389#671389
  *  
  **/
 
