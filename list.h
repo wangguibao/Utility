@@ -69,6 +69,17 @@ void list_traverse(const Node<T>* list, std::function<void(T)> func) {
     }
 }
 
+template<typename T>
+void list_destroy(const Node<T>* list) {
+    auto p = list;
+
+    while (p) {
+        auto next = p->next;
+        delete p;
+        p = next;
+    }
+}
+
 // Test case
 #if 0
 void print_value(int value) {
@@ -84,6 +95,7 @@ int main()
     auto list = create_list(vec);
     std::function<void(int)> traverse_func = print_value;
     list_traverse(list, traverse_func);
+    list_destroy(list);
     return 0;
 }
 #endif // 0
