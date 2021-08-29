@@ -1,7 +1,7 @@
 /**
  * @file list.h
  * @author wangguibao(wang_guibao@163.com)
- * @date 2021/08/29 11:38:38
+ * @date 2021/08/29 16:58
  * @brief Template functions for creating and traversing lists
  *
  **/
@@ -69,6 +69,14 @@ void list_traverse(const Node<T>* list, std::function<void(T)> func) {
     }
 }
 
+/*
+ * list_destroy
+ * @brief destroy a list
+ *
+ * @param list: list head
+ *
+ * @return void
+ */
 template<typename T>
 void list_destroy(const Node<T>* list) {
     auto p = list;
