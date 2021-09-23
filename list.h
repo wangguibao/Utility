@@ -88,6 +88,29 @@ void list_destroy(const Node<T>* list) {
     }
 }
 
+/*
+ * list_reverse
+ * @brief reverse a singly-linked list, returning the new list head
+ *
+ * @param list: list head
+ *
+ * @return a pointer to the new list head
+ */
+template<typename T>
+Node<T>* list_reverse(Node<T>* list) {
+    Node<T>* prev = nullptr;
+    Node<T>* cur = list;
+
+    while (cur) {
+        Node<T>* temp = cur->next;
+        cur->next = prev;
+        prev = cur;
+        cur = temp;
+    }
+
+    return prev;
+}
+
 // Test case
 #if 0
 void print_value(int value) {
@@ -97,15 +120,25 @@ void print_value(int value) {
 int main()
 {
     std::vector<int> vec;
+
     for (int i = 0; i < 10; ++i) {
         vec.push_back(i);
     }
+
     auto list = create_list(vec);
     std::function<void(int)> traverse_func = print_value;
+
+    std::cout << "Original list:" << std::endl;
     list_traverse(list, traverse_func);
-    list_destroy(list);
+
+    std::cout << "After reversal:" << std::endl;
+    auto new_head = list_reverse(list);
+    list_traverse(new_head, traverse_func);
+
+    list_destroy(new_head);
     return 0;
 }
 #endif // 0
 
 #endif // LIST_H_INCLUDED
+/* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
