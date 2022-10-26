@@ -10,4 +10,5 @@ list.h | Template functions for creating and traversing lists
 local_date_time.c | Print current date time in the form of YYYYMMDDhhmmss (example: 20201110165743)
 mem_usage.cpp | Get memory usage of current process
 shared_ptr.cpp | Various std::shared_ptr<> test cases (to help understanding the ownership transit process)
+devrandom.c | Generate random number from /dev/random
 
