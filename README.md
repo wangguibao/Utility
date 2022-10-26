@@ -11,4 +11,4 @@ local_date_time.c | Print current date time in the form of YYYYMMDDhhmmss (examp
 mem_usage.cpp | Get memory usage of current process
 shared_ptr.cpp | Various std::shared_ptr<> test cases (to help understanding the ownership transit process)
 devrandom.c | Generate random number from /dev/random
-
+dec2hex.c | Convert a decimal integer to hex format
