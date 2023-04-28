@@ -1,7 +1,5 @@
 #include "threadpool.h"
 #include <thread>
-#include <mutex>
-#include <condition_variable>
 #include <iostream>
 
 ThreadPool::ThreadPool(int thread_num)
@@ -19,7 +17,7 @@ ThreadPool::~ThreadPool() {
     running = false;
     cond.notify_all();
 
-    for (int i = 0; i < thread_vec.size(); ++i) {
+    for (size_t i = 0; i < thread_vec.size(); ++i) {
         thread_vec[i].join();
     }
 
@@ -57,3 +55,4 @@ void ThreadPool::thread_func(ThreadPool* pool) {
         delete task.arg;
     }
 }
+
